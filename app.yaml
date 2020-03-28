@@ -1,0 +1,31 @@
+# This file specifies your Python application's runtime configuration
+# including URL routing, versions, static file uploads, etc. See
+# https://developers.google.com/appengine/docs/python/config/appconfig
+# for details.
+
+# application: voilanorbert-api
+runtime: python27
+api_version: 1
+threadsafe: true
+
+
+# Handlers define how to route requests to your application.
+handlers:
+- url: /_ah/queue/process
+  script: wsgi.application
+  login: admin
+
+- url: /_ah/start
+  script: wsgi.application
+  login: admin
+
+- url: .*
+  script: wsgi.application
+
+
+libraries:
+- name: ssl
+  version: latest
+
+inbound_services:
+- warmup

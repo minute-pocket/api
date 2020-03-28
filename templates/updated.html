@@ -1,0 +1,25 @@
+<p>Hi {{ username }}!</p>
+
+{% if updated %}
+<p>We finished processing your list on Pocket and updated {{ updated }} items!</p>
+
+<p>If you liked the tool, could you tweet about it? This would help me get the word out!</p>
+
+<p>
+    <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fminute-pocket.com&via=cx42net&text=Minute%20Pocket%20was%20able%20to%20tag%20{{updated}}%20articles%20with%20an%20estimated%20reading%20time%20from%20my%20https%3A//getpocket.com%20account.">Here's a quick tweet to share</a>.
+</p>
+
+<p>Thank you!</p>
+{% else %}
+<p>
+    We finished processing your list but unfortunately we updated no items.<br />
+    Maybe we already processed it, or maybe it's because you have no articles? (only videos/images)
+</p>
+{% endif %}
+
+<p>I {% if not updated %}(still) {%endif %}hope you appreciated the tool :)</p>
+
+<p>
+    All the best,<br />
+    Cyril from <a href="https://minute-pocket.com">Minute-Pocket</a>
+</p>
